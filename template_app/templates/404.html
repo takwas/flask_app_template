@@ -1,0 +1,22 @@
+<!--A Jinja2 HTML document for a custom 404 page; extends base document-->
+
+{% extends "base.html" %}
+{% block title %}404 Error Page!{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}<!--end-block:NAV-->
+
+{% block content %}
+{{ super()}}
+
+<div class="container">
+
+	<div class="page-404">
+	    <p class="text-404">404</p>
+
+	    <h2>Aww Snap!</h2>
+	    <p>Something went wrong or that page doesn’t exist yet. <br><a href="url_for('index')">Return Home</a></p>
+	</div>
+</div>
+{% endblock content %}<!--end-block:CONTENT-->

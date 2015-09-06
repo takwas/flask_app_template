@@ -1,0 +1,14 @@
+<!--A Jinja2 HTML document for CUSTOM-USER PAGE; extends base document-->
+
+
+{% extends "base.html" %}
+{% block title %}User - {{username|title}}{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+<h2>Hello,</h2> <br/><h3>Welcome back {{username|title}}!</h3>
+<div class="container">
+	<p>This is your home page.</p>
+</div>
+{% endblock %}<!--end-block:CONTENT-->

@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+
+
+{%block header_scripts%}<!--begin-block:HEAD-SCRIPTS-->
+    {{super()}}    
+
+{%endblock header_scripts%}<!--end-block:HEAD-SCRIPTS-->
+
+
+
+{% block content %}     
+    {{super()}}
+
+{% endblock content %}<!--end-block:CONTENT-->
+
+                                   
+
+{% block footer %}
+	{####TODO:
+		I have declared this block empty to override the default footer
+		with an empty footer. So footer will not show up on the home page.
+
+		To undo this, simply delete this whole block.
+	#}     
+{% endblock footer%}<!--end-block:FOOTER-->
+

@@ -1,0 +1,20 @@
+.DS_Store
+*.pyc
+*.pyo
+env
+env*
+dist
+*.egg
+*.egg-info
+
+# temporary files
+*~
+
+# database files
+*.sqlite
+
+# build artifacts from python setup.py build or python setup.py install
+build/
+dist/
+*egg*/
+docs/_build

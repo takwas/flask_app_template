@@ -1,0 +1,116 @@
+
+{#This code is dependent on the Bootstrap framework.#}
+
+{% extends "bootstrap/base.html" %}
+<!--Bootstrap template doc - 'base.html' - is provided by Flask-bootstrap extension-->
+
+
+
+{%block head%}<!--begin-block:HEAD-->
+
+
+	{% block title %}
+		super()
+	{% endblock title %}
+
+	{% block favicon %}
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+	{% endblock favicon %}
+
+
+	{%- block metas %}<!--begin-block:METAS-->
+	    {{super()}}
+	    <meta charset="utf-8">
+	    
+    {%- endblock metas %}<!--end-block:METAS-->
+
+
+	{% block styles %}<!--begin-block:STYLES-->
+		
+	    {#This is temporary code to load stylesheets locally#}
+	    {####TODO: Replace these links with CDN-provided links where necessary#}
+	    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" rel="stylesheet" media="screen">
+	    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.theme.css') }}" rel="stylesheet" media="screen">
+        	   	    
+
+
+    <!-- Custom CSS-->
+    {####TODO: Edit link to custom css(es) on next line; it/they should come last#}
+    <!--	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="screen">      -->
+	
+	{% endblock styles %}<!--end-block:STYLES-->
+	
+
+	{%block header_scripts%}<!--begin-block:HEAD-SCRIPTS-->
+		{####TODO:
+			Any scripts that should be loaded in the <head></head> section
+			should be included within this block
+		#}
+		<script src="{{ url_for('static', filename='jquery/jquery-x.y.z.js') }}"></script>
+	    
+	{%endblock header_scripts%}<!--end-block:HEAD-SCRIPTS-->
+
+
+{%endblock head%}<!--end-block:HEAD-->
+
+
+
+
+{% block navbar %}<!--begin-block:NAVBAR-->
+	{{super()}}
+	{####TODO:
+		To edit the navbar, go to the 'include_navbar.html' document
+	#}
+	{% include 'include_navbar.html' %}
+
+{% endblock navbar %}<!--end-block:NAVBAR-->
+
+
+
+{% block content %}   
+	{{super()}}
+	
+	{####TODO: THIS IS DEBUG CODE.#}
+	{#Displays flash messages#}
+		{% block flash_msg %}	
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<div class="row" id="main-content" style='margin-top:50px'>
+						<div class="col-md-4 col-xl-*"></div>
+						<div class="col-md-8 col-xl-*">
+							<ul>
+								{% for message in messages %}
+									<li class="btn btn-success">{{message}}</li>
+									<br/>
+								{% endfor %}
+							</ul>
+							
+						</div>
+						<div class="col-md-4 col-xl-*"></div>
+					</div>
+				{% endif %}
+			{% endwith %}
+		{% endblock flash_msg %}
+	{#end DEBUG CODE#}    
+
+{% endblock content %}<!--end-block:CONTENT-->
+
+
+
+
+{% block scripts %}<!--begin-block:SCRIPTS-->
+
+	{% block footer %}<!--begin-block:FOOTER-->
+		{%include 'include_footer.html'%}
+
+	{% endblock footer%}<!--end-block:FOOTER-->
+
+
+	{#This is temporary code to load script files locally#}
+    {#jQuery is already loaded in "{%header_scripts%}" above; "bootstrap.min.js" is dependent on it. #}
+    <script src="{{ url_for('static', filename='jquery/jquery-ui.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+     
+   
+{% endblock scripts %}<!--end-block:SCRIPTS-->
