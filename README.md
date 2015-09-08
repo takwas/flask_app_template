@@ -8,3 +8,9 @@ At the time of this writing (***Tuesday, Sep 8, 2015***), to some extent, I'd st
 I welcome contributions and criticisms from "anyone with a good heart".  
 
 I'm also not very proficient with git as yet, so this will take some getting used to.  
+
+If you intend to start using this as it is, here is some quick tips for you:
+  + Search for all the lines containing a (or marked as) "TODO" to see what you might need to change.
+  + Look for text enclosed in double square brackets and replace them accordingly. For example, where you see:
+    [[app_name]]
+you should replace the entire text (brackets inclusive) with the name of your flask app instance.
